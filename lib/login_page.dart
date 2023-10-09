@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       final session = event.session;
       if (session != null) {
         _redirecting = true;
-        Navigator.of(context).pushReplacementNamed('login-after');
+        Navigator.of(context).pushReplacementNamed('/login-after');
       }
     });
   }

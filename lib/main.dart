@@ -6,11 +6,18 @@ import './login_page.dart';
 import './splash_page.dart';
 
 Future<void> main() async {
-  await DotEnv().load();
+  await dotenv.load();
+
+  final supabaseUrl = dotenv.get('SUPABASE_URL', fallback: '');
+  final anonKey = dotenv.get('SUPABASE_ANONKEY', fallback: '');
+  debugPrint('SUPABASE_URL: $supabaseUrl');
+  debugPrint('ANON_KEY: $anonKey');
 
   await Supabase.initialize(
-      url: dotenv.env['SUPABASE_URL'] ?? '',
-      anonKey: dotenv.env['SUPABASE_ANONKEY'] ?? '');
+    url: supabaseUrl,
+    anonKey: anonKey,
+    authFlowType: AuthFlowType.pkce,
+  );
   runApp(const MyApp());
 }
 
