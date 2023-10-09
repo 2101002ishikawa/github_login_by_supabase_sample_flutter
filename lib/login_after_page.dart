@@ -10,7 +10,6 @@ class LoginAfterPage extends StatefulWidget {
 }
 
 class _LoginAfterPageState extends State<LoginAfterPage> {
-  var _loading = false;
   @override
   Widget build(BuildContext context) {
     final user = supabase.auth.currentSession!.user;
@@ -36,9 +35,7 @@ class _LoginAfterPageState extends State<LoginAfterPage> {
           // Text('user.email: ${user.email}'),
           // Expanded(child: Text('user: ${user}')),
           const SizedBox(height: 18),
-          ElevatedButton(
-              onPressed: _signOut,
-              child: Text(_loading ? 'Loading' : 'Sign out')),
+          ElevatedButton(onPressed: _signOut, child: const Text('Sign out')),
         ],
       ),
     );
