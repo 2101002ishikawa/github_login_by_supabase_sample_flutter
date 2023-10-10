@@ -13,7 +13,8 @@ https://pregum-fox.hatenablog.jp/entry/2023/10/10/011638
 
 ## Feature
 
-* Sign in with GitHub
+- Sign in with GitHub
+- Sign out
 
 ## How to run
 
